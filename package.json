@@ -8,7 +8,10 @@
     "type": "git",
     "url": "git://github.com/samsonjs/format.git"
   },
-  "scripts": { "test": "node --test test_format.js" },
+  "scripts": {
+    "test": "node --test test_format.js",
+    "test-min": "node test_format.js ./format-min.js"
+  },
   "bugs": {
     "email": "sami@samhuri.net",
     "url": "https://github.com/samsonjs/format/issues"

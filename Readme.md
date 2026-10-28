@@ -16,27 +16,29 @@ or otherwise include them with your other JavaScript.
 Usage
 =====
 ```js
-var format = require('format')
-  , printf = format.printf
-  , vsprintf = format.vsprintf
-  // or if you want to keep it old school
-  , sprintf = format
+const format = require('./format.js')
+const { printf, vsprintf } = format
+// or if you want to keep it old school
+const sprintf = format
 
 // Print 'hello world'
 printf('%s world', 'hello')
 
-var what = 'life, the universe, and everything'
-format('%d is the answer to %s', 42, what)
+const what = 'life, the universe, and everything'
+const out = format('%d is the answer to %s', 42, what)
+console.log(out)
 // => '42 is the answer to life, the universe, and everything'
 
 vsprintf('%d is the answer to %s', [42, what])
 // => '42 is the answer to life, the universe, and everything'
 
 // you can format values as JSON with %j
-var value = {answer: 42}
-format('%j', value)
+const value = { answer: 42 }
+const out2 = format('%j', value)
+console.log(out2)
 // => '{"answer":42}'
 ```
+
 Supported format specifiers: b, c, d, f, j, o, s, x, and X.
 
 See `man 3 printf` or `man 1 printf` for details. `j` is an extension that formats values as JSON.
